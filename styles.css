@@ -1,0 +1,429 @@
+:root{
+--neon-pink:#ff6673;
+--neon-orange:#ff8800;
+--neon-yellow:#e7ff00;
+--neon-green:#00ff80;
+--neon-blue:#5fe8ff;
+--neon-purple:rgb(205, 4, 245);
+--pastel-pink:#ffe6e8;
+--pastel-orange:#ffdfba;
+--pastel-green:#baffc9;
+--pastel-blue:#bae1ff;
+--pastel-yellow:#f5fdaf;
+--pastel-purple:rgb(249, 228, 252);
+--text-pink:#99003d;
+--text-blue:#04487c;
+--text-orange:#d39333;
+--text-yellow:#b9b921;
+--text-purple:rgb(99, 8, 117);
+--bingo-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+--bingo-transition: all 0.5s ease-in-out;
+--bingo-border:solid 3px #f5f5f5;
+}
+    
+body{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding:3em;
+    color:#333;
+    font-size:1.1rem;
+    box-sizing:border-box;
+}
+
+h1,
+h2,
+h3{
+    text-align:center;
+    color:var(--text-blue);
+}
+
+p{
+    margin:0;
+    padding:0;
+}
+
+#thoughtful-face{
+ font-size:2rem;
+ text-align:center;
+ padding-bottom:2rem;
+}
+
+#game{
+    margin:0 auto;
+    max-width:1100;
+}
+#bingo-board{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:stretch;
+    justify-content:stretch;
+    gap: 0.6em;
+}
+
+.bingo-card{
+    position:relative;
+    width:100%;        
+}
+
+.bingo-card-front {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows:25% auto auto;
+    grid-template-areas:
+      "iia  md md"
+      "bc  bc bc"
+      "ba   ba   ba";
+      border-radius: 5px;
+      line-height:1.5;
+      transition:var(--bingo-transition);
+      border:solid 3px;
+      height:100%;
+      width:100%;
+   }
+
+   /* Bingo card grid areas, contents */
+.indicator-icon-area {
+    grid-area: iia;
+    font-size:3.5rem;
+    padding-left:0.8em;
+    transition:var(--bingo-transition)    
+}
+
+.mark-done{
+    grid-area:md;
+    text-align:right;    
+}
+
+.indicator-icon-area,
+.mark-done{
+    position:relative;
+}
+
+.check-btn{
+    font-size:3.4rem;
+    padding:0.5rem;
+    background-color: #fff;
+    color:var(--neon-green);
+    text-align:right;
+    border:solid 1px var(--neon-green);
+    border-radius:3%;
+    cursor: pointer;
+    width: auto;
+    position:relative;
+    top:10px;
+    left:-20px;
+    transition: all 0.3s ease-in;
+}
+
+.check-btn:after {
+    position: absolute;
+    border-radius:3%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--neon-green);
+    background-color: var(--neon-green);
+    left: 4px;
+    top: 4px;
+    content: '';
+    transition: all 0.3s ease-in;
+    z-index:-1;
+}
+
+.check-btn:hover {
+    top:17px;
+    left:-22px;
+    background-color:#f5f5f5;
+}
+
+.check-btn:hover:after   {
+    top: -2px;
+    left: -2px;
+    border-color:var(--pastel-green);
+    border-radius:3%;
+}
+
+.bingo-content {
+    grid-area: bc;
+    transition: all 0.25s ease-in-out;
+    font-size:1.3rem;
+    overflow:visible;
+    padding:0.8em;
+}
+
+.bingo-acknowledgment {
+    grid-area: ba;
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    padding-right:0.8em;
+}
+
+.personal-emoji{
+    font-size: 2rem;
+    padding:0 0.2em 0.4em 0.2em;
+}
+
+/* COLOUR THEME CLASSES */
+/* pink */
+.theme-pink{
+    color:var(--text-pink);
+    border-color: var(--neon-pink);
+}
+
+.theme-pink .indicator-icon-area {
+    color:var(--pastel-pink);
+}
+    
+.theme-pink:hover .indicator-icon-area{
+    text-shadow:    -2px 2px 0 var(--neon-pink),
+                    2px 2px 0 var(--neon-pink),
+                    2px -2px 0 var(--neon-pink),
+                    -2px -2px 0 var(--neon-pink);
+}    
+
+.theme-pink:hover .bingo-content,
+.theme-pink:hover .bingo-acknowledgment{
+    color:var(--neon-pink);
+    transition:var(--bingo-transition);
+}
+
+/* blue */
+.theme-blue{
+    color:var(--text-blue);
+    border-color: var(--neon-blue);
+}
+
+.theme-blue .indicator-icon-area {
+    color:var(--pastel-blue);
+}
+.theme-blue:hover .indicator-icon-area{
+    text-shadow: -2px 2px 0 var(--neon-blue),
+                2px 2px 0 var(--neon-blue),
+                2px -2px 0 var(--neon-blue),
+                -2px -2px 0 var(--neon-blue);
+}    
+
+.theme-blue:hover .bingo-content,
+.theme-blue:hover .bingo-acknowledgment{
+    color:var(--neon-blue);
+    transition:var(--bingo-transition);
+}
+/* orange */
+.theme-orange{
+    color:var(--text-orange);
+    border-color:var(--neon-orange)
+}
+
+.theme-orange .indicator-icon-area {
+    color:var(--pastel-orange);
+}
+.theme-orange:hover .indicator-icon-area{
+    text-shadow: -2px 2px 0 var(--neon-orange),
+                2px 2px 0 var(--neon-orange),
+                2px -2px 0 var(--neon-orange),
+                -2px -2px 0 var(--neon-orange);
+}    
+
+.theme-orange:hover .bingo-content,
+.theme-orange:hover .bingo-acknowledgment{
+    color:var(--neon-orange);
+    transition:var(--bingo-transition);
+}
+    
+/* yellow */
+.theme-yellow{
+    color:var(--text-yellow);
+    border-color:var(--neon-yellow)
+}
+
+.theme-yellow .indicator-icon-area {
+    color:var(--pastel-yellow);
+}
+.theme-yellow:hover .indicator-icon-area{
+    text-shadow: -2px 2px 0 var(--neon-yellow),
+                2px 2px 0 var(--neon-yellow),
+                2px -2px 0 var(--neon-yellow),
+                -2px -2px 0 var(--neon-yellow);
+}    
+
+.theme-yellow:hover .bingo-content,
+.theme-yellow:hover .bingo-acknowledgment{
+    color:var(--neon-yellow);
+    transition:var(--bingo-transition);
+}
+    
+/* purple */
+.theme-purple{
+    color:var(--text-purple);
+    border-color: var(--neon-purple);
+}
+
+.theme-purple .indicator-icon-area {
+    color:var(--pastel-purple);
+}
+
+.theme-purple:hover .indicator-icon-area{
+    text-shadow: -2px 2px 0 var(--neon-purple),
+                2px 2px 0 var(--neon-purple),
+                2px -2px 0 var(--neon-purple),
+                -2px -2px 0 var(--neon-purple);
+}    
+
+.theme-purple:hover .bingo-content,
+.theme-purple:hover .acknowledgment-text{
+    color:var(--neon-purple);
+    transition:var(--bingo-transition);
+}
+
+/* CHECKED CARD STATUS */
+.bingo-card-rear{
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:1;
+    top:1;
+    justify-content:center;
+    align-items:center;
+    transition: all 0.7s ease-in;
+    border-radius: 1%;
+}
+
+.marked-done{
+    display:flex;
+    transition:var(--bingo-transition);
+    border:none;
+}
+
+/* checked card theme colours */
+/* pink */
+.theme-pink .marked-done{
+    background-color:var(--pastel-pink);
+}
+
+.theme-blue .marked-done{
+    background-color:var(--pastel-blue);
+}
+
+.theme-orange .marked-done{
+    background-color:var(--pastel-orange);
+}
+
+.theme-yellow .marked-done{
+    background-color:var(--pastel-yellow);
+}
+
+.theme-purple .marked-done{
+    background-color:var(--pastel-purple);
+}
+.spied{
+    font-family: 'Permanent Marker', cursive;
+    width:8rem;
+    height:8rem;
+    font-size:6rem;
+    text-align:center;
+    vertical-align:middle;
+    padding:1rem;
+    color:rgba(37, 36, 36, 0.8);
+    border:solid 10px rgba(37, 36, 36, 0.8);
+    border-radius:50%;
+    position:relative;
+    z-index:2;
+}
+
+.speaker{
+    position:absolute;
+    text-align:center;
+    font-size:3.5rem;
+    line-height:0.8;
+    padding:0 20px;
+}
+
+/* End of current game setup */
+ #game-toggle{
+     position:relative;
+     padding: 0 0 10px 10px;
+ }
+
+ /* The switch - the box around the slider */
+ .switch {
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 30px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--text-blue);
+    /* -webkit-transition: .4s; */
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    /* -webkit-transition: .4s; */
+    transition: .4s;
+  }
+  
+  .switch input:checked + .slider {
+    background-color: var(--text-blue);
+  }
+  
+  .switch input:focus + .slider {
+    box-shadow: var(--bingo-box-shadow);
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateX(32px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 3px;
+  }
+  
+  .slider.round:before {
+    border-radius: 5%;
+  } 
+
+  @media screen and (min-width:768px) {
+    .bingo-card{
+        width:48%;
+        min-height:260px;
+    }    
+    .bingo-card-front{
+            grid-template-rows: 1fr 1fr 50px;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .bingo-card{
+        max-width:30%;
+        max-height:300px;
+    }    
+}
+/* 
+put the drinking icons in
+*/

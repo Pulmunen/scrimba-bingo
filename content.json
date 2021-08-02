@@ -1,0 +1,65 @@
+[
+  { "key": 0,
+    "name":"Leanne", 
+    "quote":"'Hello, super-amazing Scrimba student'", 
+    "emoji": "👩", 
+    "icon":"fas fa-comment-dots",
+    "theme":"pink"
+  },
+  {"key": 1,
+    "name":"Heroes", 
+    "quote":"Michael, ThalitaG, Johno or Lucky Victory to the rescue", 
+    "emoji": "🦸🏾", 
+    "icon":"fas fa-hands-helping",
+    "theme":"blue"    
+  },
+  {"key": 2,
+    "name":"Per", 
+    "quote":"'Give yourself a pat on the back!'", 
+    "emoji": "👏🏽", 
+    "icon":"fas fa-comment-dots",
+    "theme":"orange"
+  },
+  {"key": 3,
+    "name":"Gary", 
+    "quote":"'That looks pretty solid!'", 
+    "emoji": "🏋️‍♂️", 
+    "icon":"fas fa-comment-dots",
+    "theme":"yellow"
+  },
+  {"key": 4,
+    "name":"Pumpkin", 
+    "quote":"'Miouw!'", 
+    "emoji": "🐱", 
+    "icon":"fas fa-cat",
+    "theme":"purple"
+  },
+  {"key": 5,
+    "name":"Anja", 
+    "quote":"Lulled to sleep by Anja's soothing keyboard", 
+    "emoji": "👩‍💻", 
+    "icon":"fas fa-keyboard",
+    "theme":"yellow"
+  },
+  {"key": 6,
+    "name":"Bob", 
+    "quote":"Deletes everything and tells you to do it again", 
+    "emoji": "😜", 
+    "icon":"fas fa-grin-wink",
+    "theme":"orange"
+  },
+  {"key": 7,
+    "name":"Endzo Useri", 
+    "quote":"'Fuhgeddaboudit!'", 
+  "emoji": "😎", 
+    "icon":"fas fa-comment-dots",
+    "theme":"blue"
+  },
+  {"key": 8,
+    "name":"Cassidy", 
+    "quote":"Tells a corny React joke", 
+    "emoji": "🤦‍♀️", 
+    "icon":"fas fa-smile-wink",
+    "theme":"pink"
+  }
+]
