@@ -56,11 +56,12 @@ getData().then(personalities =>{
 function doThis(event){
     let myTarget = event.target
     let cardRearArr=document.querySelectorAll('.bingo-card-rear')
-    cardRearArr.forEach((value)=>{
-        if (value.dataset.key === myTarget.dataset.key){
-            console.log('hi')
-            value.classList.add('marked-done')
-        }        
-    })
-        
+        cardRearArr.forEach((value)=>{
+            if (value.dataset.key === myTarget.dataset.key){
+                value.classList.add('marked-done')
+                setTimeout(()=>{value.classList.add('marked')},20
+                )
+            }
+        }
+    )
 } 
