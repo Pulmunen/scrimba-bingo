@@ -7,6 +7,7 @@
 --neon-purple:rgb(205, 4, 245);
 --pastel-pink:#ffe6e8;
 --pastel-orange:#ffdfba;
+--pastel-green:#baffc9;
 --pastel-blue:#bae1ff;
 --pastel-yellow:#f5fdaf;
 --pastel-purple:rgb(249, 228, 252);
@@ -278,7 +279,6 @@ p{
 
 /* CHECKED CARD STATUS */
 .bingo-card-rear{
-    display:none;
     position:absolute;
     width:100%;
     height:100%;
@@ -286,14 +286,51 @@ p{
     top:1;
     justify-content:center;
     align-items:center;
-    transition: all 0.7s ease-in;
     border-radius: 1%;
+    background-color:#fff;
+    display:none;
+    /* transition:all 0.1s linear; */
+}
+
+/* rear of card visibility */
+.not-marked{
+    opacity:0;
+    transition:var(--bingo-transition);
+}
+
+.marked {
+    transition: var(--bingo-transition);
+    opacity:1;
 }
 
 .marked-done{
     display:flex;
-    transition:var(--bingo-transition);
     border:none;
+}
+
+/* .marked-done is visible class, .not-marked is invisible class */
+
+.spied{
+    font-family: 'Permanent Marker', cursive;
+    width:8rem;
+    height:8rem;
+    font-size:6rem;
+    text-align:center;
+    vertical-align:middle;
+    padding:1rem;
+    color:rgba(37, 36, 36, 0.8);
+    border:solid 10px rgba(37, 36, 36, 0.8);
+    border-radius:50%;
+    position:relative;
+    z-index:2;
+}
+
+.speaker{
+    position:absolute;
+    text-align:center;
+    font-size:3.5rem;
+    line-height:0.8;
+    padding:0 20px;
 }
 
 /* checked card theme colours */
@@ -316,28 +353,6 @@ p{
 
 .theme-purple .marked-done{
     background-color:var(--pastel-purple);
-}
-.spied{
-    font-family: 'Permanent Marker', cursive;
-    width:8rem;
-    height:8rem;
-    font-size:6rem;
-    text-align:center;
-    vertical-align:middle;
-    padding:1rem;
-    color:rgba(37, 36, 36, 0.8);
-    border:solid 10px rgba(37, 36, 36, 0.8);
-    border-radius:50%;
-    position:relative;
-    z-index:2;
-}
-
-.speaker{
-    position:absolute;
-    text-align:center;
-    font-size:3.5rem;
-    line-height:0.8;
-    padding:0 20px;
 }
 
   @media screen and (min-width:768px) {
